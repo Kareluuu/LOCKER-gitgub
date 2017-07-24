@@ -1,0 +1,369 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>抽屉</title>
+    <link rel="stylesheet" type="text/css" href="css/ionic.min.css" />
+    <!-- <script src="js/ionic.bundle.min.js"></script> -->
+    <script src="js/ionic.bundle-PopupNightly.js"></script>
+    <script src="js/An alert dialog.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('MyCtrl', function($scope) {
+
+    });
+    </script>
+
+
+    <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    .scroll-content {
+      background-color: white;
+    }
+    .article {
+      padding-top: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .item{
+      border:none;
+    }
+    .bar.bar-light{
+      background: #fff;
+    }
+
+    .has-header{
+      top: 0;
+    }
+
+    .button.button-positive {
+     border-color: transparent;
+     background-color: #d87316;
+    }
+
+    .button.button-positive.active, .button.button-positive.activated {
+      border-color: #a2a2a2;
+      background-color: #b86212; 
+    }
+
+    </style>
+</head>
+<body style="background:#efefef;">
+
+          <!--这里是头部-->
+          <ion-header-bar class="bar bar-header bar-light">
+            <div class=logo_chouti style="margin:0 auto;">
+               <img src="images/_locker-06.png" style="height:70%;margin-top:5px;">
+            </div>
+          </ion-header-bar>
+
+          <!--这里是文章-->
+          <ion-content>
+             <!-- <div class="_cover" style="height:auto;">
+               <div>
+                 <img src="images/cover/cover1.jpg" style="width:100%;">
+               </div>
+               <a href="#"></a>
+             </div> -->
+
+             <div class="mian-article" style="margin-top: 30px;">
+                 
+                 <!--Tips-->
+                <div class="article">
+                     <a href="#">
+                        <div class="item item-image">
+                           <img src="images/article/tips/1.jpg">
+                        </div>
+                     </a>
+                </div> 
+
+
+                <!--卡片阅读模块-->
+                <div class="article">
+                  <div class="item item-image" style="text-align: left;">
+
+                      <ion-scroll zooming="true" direction="x" scrollbar-x="false" scrollbar-y="false" style="width: 386px; height: 270px;">
+                        <div style="width: 1600px; height: 270px;">
+                          <ul style="display: flex;">
+
+                            <!--第一张卡片（封面）-->
+                            <div ng-controller="PopupCtrl" style="margin-right: 5px;">
+                              <a href="#" ng-click="showAlert()">
+                                <img style="border-radius: 0px; width:270px; height:270px;     margin-right: 10px;" src="images/article/20170717/card01.jpg"> 
+                              </a>
+                            </div>
+
+                            <!--alert点击弹窗js-->
+                             <script type="text/javascript">
+                                angular.module('ionicApp', ['ionic'])
+                                .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+                                 // Triggered on a button click, or some other target
+                                 $scope.showPopup = function() {
+                                   $scope.data = {}
+
+                                   // An elaborate, custom popup
+                                   var myPopup = $ionicPopup.show({
+                                     template: '<input type="password" ng-model="data.wifi">',
+                                     title: 'Enter Wi-Fi Password',
+                                     subTitle: 'Please use normal things',
+                                     scope: $scope,
+                                     buttons: [
+                                       { text: 'Cancel' },
+                                       {
+                                         text: '<b>Save</b>',
+                                         type: 'button-positive',
+                                         onTap: function(e) {
+                                           if (!$scope.data.wifi) {
+                                             //don't allow the user to close unless he enters wifi password
+                                             e.preventDefault();
+                                           } else {
+                                             return $scope.data.wifi;
+                                           }
+                                         }
+                                       },
+                                     ]
+                                   });
+                                   myPopup.then(function(res) {
+                                     console.log('Tapped!', res);
+                                   });
+                                   $timeout(function() {
+                                      myPopup.close(); //close the popup after 3 seconds for some reason
+                                   }, 3000);
+                                  };
+
+
+                                   // An alert dialog
+                                   $scope.showAlert = function() {
+                                     var alertPopup = $ionicPopup.alert({
+                                       title: '这是一个快速阅读式卡组',
+                                       template: 'tips:请向右滑动进行本卡片组的阅览',
+                                       okText: '明白了'
+                                     });
+                                     alertPopup.then(function(res) {
+                                       console.log('Thank you for not eating my delicious ice cream cone');
+                                     });
+                                   };
+                                });
+                             </script>
+          
+
+                            
+                            <!--第二张卡片（内容）-->
+                            <li style="margin-right: 15px;">
+                              <div class="list card" style="width: 289px; height: 270px; margin: 0; padding: 0; border-top: 1px solid #dadada; box-shadow: none;">
+
+                                  <div class="item item-body" style="height: 269px; padding: 0px 0px; margin-top: 0; border: 1px solid #dadada;">
+                                    <img class="full-image" style="height: 130px;" src="images/article/20170717/card02.jpg">
+                                    <p style="padding: 15px 15px 10px; margin: 0; font-size: 13px;">
+                                      <strong>#DLS#</strong>是Airbnb的设计师、研发一同完成的一套组件库，每个组件对应着一段代码，能自适应也能进行拓展设计。是一套自由度相当高且美观的组件体系。
+                                    </p>
+                                    <p style="margin: 0;">
+                                      <a href="#" class="subdued" style="padding: 15; font-size:10px;">http://airbnb.design</a>
+                                      <!-- <a href="#" class="subdued">5 Comments</a> -->
+                                    </p>
+                                  </div>
+                              </div>  
+                            </li>
+
+                            <!--第三张卡片（内容）-->
+                            <li style="margin-right: 15px;">
+                              <div class="list card" style="width: 289px; height: 270px; margin: 0; padding: 0; border-top: 1px solid #dadada; box-shadow: none;">
+
+                                  <div class="item item-body" style="height: 269px; padding: 0px 0px; margin-top: 0; border: 1px solid #dadada;">
+                                    <img class="full-image" style="height: 130px;" src="images/article/20170717/card03.jpg">
+                                    <p style="padding: 15px 15px 10px; margin: 0; font-size: 13px;">
+                                      <strong>#Airshots#</strong>简单的来说，就是帮助各国的Airbnb设计开发工作者，能通过这个工具很好的理解上面的国际化设计语言系统，并能快速的测试设计能否符合预期。
+                                    </p>
+                                    <p style="margin: 0;">
+                                      <a href="#" class="subdued" style="padding: 15; font-size:10px;">http://airbnb.design</a>
+                                      <!-- <a href="#" class="subdued">5 Comments</a> -->
+                                    </p>
+                                  </div>
+                              </div>  
+                            </li>
+
+                            <!--第四张卡片（内容）-->
+                            <li style="margin-right: 15px;">
+                              <div class="list card" style="width: 289px; height: 270px; margin: 0; padding: 0; border-top: 1px solid #dadada; box-shadow: none;">
+
+                                  <div class="item item-body" style="height: 269px; padding: 0px 0px; margin-top: 0; border: 1px solid #dadada;">
+                                    <img class="full-image" style="height: 130px;" src="images/article/20170717/card04.jpg">
+                                    <p style="padding: 15px 15px 10px; margin: 0; font-size: 13px;">
+                                      <strong>#AirJET#</strong>是内部的一个云端共享系统，各地的设计团队能在上面获得最新的设计语言规范，并投入本地化的设计。同时也能观察到各个分部的设计思路。
+                                    </p>
+                                    <p style="margin: 0;">
+                                      <a href="#" class="subdued" style="padding: 15; font-size:10px;">http://airbnb.design</a>
+                                      <!-- <a href="#" class="subdued">5 Comments</a> -->
+                                    </p>
+                                  </div>
+                              </div>  
+                            </li>
+
+                            <!--第五张卡片（内容）-->
+                            <li style="margin-right: 15px;">
+                              <div class="list card" style="width: 289px; height: 270px; margin: 0; padding: 0; border-top: 1px solid #dadada; box-shadow: none;">
+
+                                  <div class="item item-body" style="height: 269px; padding: 0px 0px; margin-top: 0; border: 1px solid #dadada;">
+                                    <img class="full-image" style="height: 130px;" src="images/article/20170717/card05.jpg">
+                                    <p style="padding: 15px 15px 10px; margin: 0; font-size: 13px;">
+                                      <strong>#React Sketch.app#</strong>是为设计师而设计的设计中台，与DLS相辅相成。顾名思义就是将React编译语言和Sketch可视化进行协同管理，解放设计生产力。
+                                    </p>
+                                    <p style="margin: 0;">
+                                      <a href="#" class="subdued" style="padding: 15; font-size:10px;">https://github.com/airbnb/react-sketchapp</a>
+                                      <!-- <a href="#" class="subdued">5 Comments</a> -->
+                                    </p>
+                                  </div>
+                              </div>  
+                            </li>
+
+                            <!--第六张卡片（内容）-->
+                            <li style="margin-right: 15px;">
+                              <div class="list card" style="width: 289px; height: 270px; margin: 0; padding: 0; border-top: 1px solid #dadada; box-shadow: none;">
+
+                                  <div class="item item-body" style="height: 269px; padding: 0px 0px; margin-top: 0; border: 1px solid #dadada;">
+                                    <img class="full-image" style="height: 130px;" src="images/article/20170717/card06.jpg">
+                                    <p style="padding: 15px 15px 10px; margin: 0; font-size: 13px;">
+                                      <strong>#Lottie#</strong>可以作为AE的插件，导出.Jason后缀文件，而这个json文件通过LottieAnimationView解析并最终生成绚丽的动画效果展示在我们面前。
+                                    </p>
+                                    <p style="margin: 0;">
+                                      <a href="#" class="subdued" style="padding: 15; font-size:10px;">https://github.com/airbnb/lottie-ios</a>
+                                      <!-- <a href="#" class="subdued">5 Comments</a> -->
+                                    </p>
+                                  </div>
+                              </div>  
+                            </li>
+
+                            <!--第七张卡片（内容）-->
+                            <li style="margin-right: 15px;">
+                              <div class="list card" style="width: 250px; height: 270px; margin: 0; padding: 0; border-top: 1px solid #fff; box-shadow: none;">
+
+                                  <div class="item item-body" style="height: 269px; padding: 0px 0px; margin-top: 0; border: 1px solid #fff;">
+                                    <img class="full-image" style="height: 130px;" src="images/article/20170717/card07.jpg">
+                                    <p style="padding: 0px 15px 10px; margin: 0; font-size: 13px;">
+                                      <strong>Date | 2017-07-20</strong>
+                                      </br>
+                                      恭喜你完成了一次卡片内容阅读！
+                                    </p>
+                                    <p style="margin: 0;">
+                                      <!-- <a href="#" class="subdued" style="padding: 15; font-size:10px;">https://github.com/airbnb/lottie-ios</a> -->
+                                      <!-- <a href="#" class="subdued">5 Comments</a> -->
+                                    </p>
+                                  </div>
+                              </div>  
+                            </li>
+
+                          </ul> 
+                        </div>
+                      </ion-scroll>
+
+                  </div>
+                </div>
+ 
+
+
+                <!--Dseign Thinking:同理心-->
+                <div class="article">
+                     <a href="posts/20170722.html">
+                        <div class="item item-image">
+                           <img src="images/article/20170722/cover.jpg">
+                        </div>
+                     </a>
+                </div>
+
+
+
+                <!--交互设计第六原则：约束-->
+                <div class="article">
+                     <a href="posts/20170627.html">
+                        <div class="item item-image">
+                           <img src="images/article/20170627/cover.jpg">
+                        </div>
+                     </a>
+                </div>
+
+
+                <!--五个交互的基本原则-->
+                <div class="article">
+                     <a href="posts/20170619.html">
+                        <div class="item item-image">
+                           <img src="images/article/20170619/cover.jpg">
+                        </div>
+                     </a>
+                </div>  
+
+                
+                <!--卡片式界面设计-->
+                <div class="article">
+                     <a href="posts/20170621.html">
+                        <div class="item item-image">
+                           <img src="images/article/20170621/cover.jpg">
+                        </div>
+                     </a>
+                </div>    
+
+
+                <!--如何帮用户做更聪明的选择-->
+                <div class="article">
+                     <a href="posts/20170521.html">
+                        <div class="item item-image">
+                           <img src="images/article/20170521/cover.jpg">
+                        </div>
+                     </a>
+                </div>   
+
+                <!--简述响应式导航设计-->
+                <div class="article">
+                     <a href="posts/A Brief Overview On Responsive Navigation Patterns.html">
+                        <div class="item item-image">
+                           <img src="images/article/A Brief Overview On Responsive Navigation Patterns/cover.jpg">
+                        </div>
+                     </a>
+                </div>
+
+                <!--响应式网页设计-->
+                <div class="article">
+                     <a href="posts/Responsive Web Design.html">
+                        <div class="item item-image">
+                           <img src="images/article/响应式网页设计/cover.jpg">
+                        </div>
+                     </a>
+                </div>       
+
+                <!--轮播图的十条规则-->
+                <div class="article">
+                     <a href="posts/轮播图的十条规则.html">
+                        <div class="item item-image">
+                           <img src="images/article/轮播十条规则/cover.jpg">
+                        </div>
+                     </a>
+                </div>      
+
+
+             </div>
+
+
+
+
+
+             <div class="_blank" style="height:50px;padding-top:30px;color:#cfcfcf;">
+                <p style="text-align:center;">—没有了还翻什么—</p>
+             </div>
+          </ion-content>
+          
+          <!--这里是底部TAB-->
+          <div class="tabs-striped tabs-color-assertive" style="color: #ff3728;border: 0 solid #ff3728;">
+            <div class="tabs">
+              <a class="tab-item active" href="index.html">
+                博客
+              </a>
+
+              <a class="tab-item" href="layouts/about.html">
+                关于
+              </a>
+            </div>
+          </div>
+</body>
+</html>

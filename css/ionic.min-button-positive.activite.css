@@ -1,0 +1,11 @@
+
+
+
+.button.button-positive {
+    border-color: transparent;
+    background-color: #d87316;
+}
+
+.button.button-positive.active, .button.button-positive.activated {
+      border-color: #a2a2a2;
+      background-color: #b86212; }

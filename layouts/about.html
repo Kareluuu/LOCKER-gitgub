@@ -1,0 +1,82 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>抽屉</title>
+    <link rel="stylesheet" type="text/css" href="css/ionic.min.css" />
+    <script src="js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('MyCtrl', function($scope) {
+
+    });
+    </script>
+    <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    .scroll-content {
+      background-color: white;
+    }
+    .article {
+      padding-top: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .item{
+      border:none;
+    }
+    .bar.bar-light{
+      background: #fff;
+    }
+
+    .has-header{
+      top: 0;
+    }
+
+    </style>
+</head>
+<body ng-controller="MyCtrl" style="background:#272822;">
+
+          <!--这里是头部-->
+          <ion-header-bar class="bar bar-header bar-light">
+            <div class=logo_chouti style="margin:0 auto;">
+               <img src="images/_locker-06.png" style="height:70%;margin-top:5px;">
+            </div>
+          </ion-header-bar>
+
+          <!--这里是文章-->
+          <ion-content style="background:#fff;">
+             <!-- <div class="_cover" style="height:auto;">
+               <div>
+                 <img src="images/cover/cover1.jpg" style="width:100%;">
+               </div>
+               <a href="#"></a>
+             </div> -->
+
+             <div class="mian-article" style="margin-top: 30px;">
+
+                <!--卡片式界面设计-->
+                <div class="item item-image" style="padding-top: 150;">
+                  <img src="images/article/tips/2.jpg">
+                </div> 
+
+             </div>
+
+          </ion-content>
+          
+          <!--这里是底部TAB-->
+          <div class="tabs-striped tabs-color-assertive" style="color: #ff3728;border: 0 solid #ff3728;">
+            <div class="tabs">
+              <a class="tab-item" href="../index.html">
+                博客
+              </a>
+
+              <a class="tab-item active" href="about.html">
+                关于
+              </a>
+            </div>
+          </div>
+</body>
+</html>

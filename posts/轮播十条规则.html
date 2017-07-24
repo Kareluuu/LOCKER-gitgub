@@ -1,0 +1,98 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>轮播图的十条规则</title>
+    <link rel="stylesheet" type="text/css" href="../css/ionic.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/Typora-轮播图十条规则.css" />
+    <script src="../js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('MyCtrl', function($scope) {
+
+    });
+    </script>
+    <!-- <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    </style> -->
+</head>
+<body ng-controller="MyCtrl">
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" href="index.html">返回</a>
+      <h1 class="title">轮播图的十条规则</h1>
+    </ion-header-bar>
+
+    <ion-content>
+       <div>
+          <div class="_title" style="padding: 15px;">
+          	 <h3>轮播图的十条规则</h3>
+          	 <p style="color:#666;"><i class="icon ion-ios-paper-outline" style="padding-right: 5px;"></i>谢晓聪/2016-12-13</p>
+          </div>
+
+         <div  id='write'  class = 'is-node'><p><em>请问首页中的轮播效果真的能帮到用户吗？还是说，使用轮播是因为他是比较流行且通俗的一种展示工具，可以用来解决庞大组织中谁能占据首屏相对优质的banner位置的争论问题？</em></p><p></p><p>我们得到的答案是轮播的确能在首页中起到一定的作用。但是，在实践过程中绝大多数的表现在用户层面看来都是欠佳的。</p><p></p><p>在Baymard研究协会中，我们进行了大规模可用性测试的实践，在过去的7年中同时兼顾桌面以及移动端的网站测试。测试的结果显示如果我们能遵循10条要求，那么在首页的轮播机制是能够达到令人满意的表现的。很重要的一点，在实现过程中需要区分桌面端与移动端。</p><p><img src='../images/article/轮播十条规则/图片1.png' alt='图片1' /></p><p></p><h4><a name='header-c692' class='md-header-anchor '></a>1.Slide Sequence And Destinations</h4><h4><a name='header-c693' class='md-header-anchor '></a>滑动的顺序以及目的</h4><p> </p><p>大多数用户不会看完所有的首页轮播内容，哪怕是自动轮播。他们不会一直傻傻的待在首页很长时间，实际上很快他们会根据自己的目的以及需求离开首页去往其他页面。所以更加不会老实的聚焦于你的首页轮播区域。</p><p> </p><p>测试期间，在完成一次完整的轮播循环之前，我们测试对象通常会进入到其他页面或者在自动轮播完成一个循环前滚动滑鼠离开进行进一步的浏览操作。而且这还是自动轮播的情况下，很显然，手动轮播只会让轮播停留在第一张直到测试对象去主动切换。</p><p> </p><p>另一个潜台词就是<em>没有人可以预测用户下一步到底会看哪 一帧轮播图</em>。</p><p> </p><p>我们之前做的轮播图可用性研究(仔细安排每一帧的展示内 容和顺序)只对少数案例网站效果有一定的提高，这恰恰证 明了一个大问题 — 大部分用户根本不会看这些轮播图，因 此除非用户主动去找不然他们不会注意到那些有用的信息。 所以，即使完善轮播图的细节设计是一个很好的想法，但这 并不能成为用户获取网站信息的唯一方式。</p><p></p><ol><li><p>把最重要的内容优先排布；</p><p></p></li><li><p>把轮播工具当成网站特色的高光点来使用，但千万不要让轮播图中承载的功能或者内容成为整个网站唯一的访问渠道；</p></li></ol><p></p><h4><a name='header-c724' class='md-header-anchor '></a>2.Auto-Rotation Logic On Desktop</h4><h4><a name='header-c725' class='md-header-anchor '></a>自动轮播的基本逻辑</h4><p> </p><p>自动轮播可以扩散内部的曝光率，当手动轮播只能带来可怜的1%-2%的点击率时，自动轮播却可以带来8%-10%的点击率，相对手动轮播来说数据更好看点。但有一点还是要注意：正如所有的动态图的效果一样，自动轮播的内容会把用户的注意力从静态的内容中吸引过来。因此，我们要设计更高质量以及更具有设计感的轮播内容才能充分利用这种优势。</p><p> </p><p>关于自动轮播的三个细节至关重要，如果我们能注意那么会带来很大的效果提升：</p><p> </p><h5><a name='header-c736' class='md-header-anchor '></a>细节一：自动切换的时间间隔不宜太快</h5><p>如果轮播得太快那么用户就没有足够的时间看完感兴 趣的轮播图内容；</p><p> </p><p>如果轮播的太快那么用户就会因为不感兴趣的轮播内 容而被骚扰；</p><p> </p><p>轮播图的展示时间应该根据轮播图的文案内容来决定—<em>尼尔森诺曼集团</em>推荐自动轮播图的单帧时长按照1秒 展示3个文案来播放，这就意味着每个轮播图的展示时长 都是独立的；</p><p></p><p><img src='../images/article/轮播十条规则/图片2.png' alt='图片2' /></p><p></p><p><em>像苹果轮播这样将展示时间外露出来，从情感设计角度能提高用户的arousl程度，从而使用户的关注范围缩小，提升聚焦程度，为轮播内容带来更高质量的关注度，但是否会继续产生点击行为，那么更多的就取决于轮播图本身的质量了；</em></p><p></p><h5><a name='header-c757' class='md-header-anchor '></a>细节二：当hover轮播内容时，应该暂停自动轮播</h5><p></p><p><img src='../images/article/轮播十条规则/图片3.png' alt='图片3' /></p><p></p><p><em>“如果我的鼠标在这张图上面时，那么它就不要再自动轮播了。”一位测试对象正在浏览Blue nile官网时向我们抱怨糟糕的体验，“否则，我有可能会误点到我不想要的内容，而且刚才就发生了！所以请暂停掉轮播好吗！”</em></p><p></p><p>Web information seeking and interaction 指出用户鼠标 的位置与他们在当前页面关注的内容有内在联系 — 当 用户鼠标悬停在某一帧轮播图时说明他们对它的内容感兴趣；</p><p> </p><p>当用户悬停时轮播图暂停的第二个理由是防止用户在点击想看的那一帧轮播图时自动轮播到下一帧 — 如果用户意识到他们点击后跳转到一个无关的页面那么用户会 感觉很气恼和失落，并且会不得不重新回到主页然后再次点击原来想要的那一部帧轮播图；</p><p></p><h5><a name='header-c774' class='md-header-anchor '></a>细节三：当用户有任何主动交互行为时，应停止自动轮播</h5><p>当用户主动点击轮播图按钮来看前一帧或者下一帧内容时，这种行为是有意进行的并且 (当前轮播内容)不应该被改变即使用户决定去查看主页的其他内容；</p><p>点击行为是用户的主动响应行为，它是反应用户意图和兴趣的一个强烈的信号。因此，当用户主动对轮播图进行交互时(轮播图)应该停止自动轮播，因为用户极有可能是有意要查看某一帧的内容；</p><p></p><p></p><h4><a name='header-c783' class='md-header-anchor '></a>3.Carousel Controls Need To Perform Two Functions</h4><h4><a name='header-c784' class='md-header-anchor '></a>轮播的控制按钮需要具备两项基本功能</h4><p></p><h5><a name='header-c787' class='md-header-anchor '></a>基本功能一：提示当前图片所在帧数位置</h5><p></p><p><img src='../images/article/轮播十条规则/图片4.png' alt='![img](file:///D:/%E5%89%8D%E7%AB%AF%E6%96%87%E4%BB%B6/%E6%8A%BD%E5%B1%89/mobile/images/article/%E8%BD%AE%E6%92%AD%E5%8D%81%E6%9D%A1%E8%A7%84%E5%88%99/%E5%9B%BE%E7%89%874.png?lastModify=1492152214)图片4' /></p><p></p><p>比较常用的设计是在一张五彩斑斓的图片上设置一组小点但这通常会很难识别，把这些点放置在图片外面会好一点；</p><p></p><h5><a name='header-c794' class='md-header-anchor '></a>基本功能二：允许用户进行前后帧的切换</h5><p></p><p><img src='../images/article/轮播十条规则/图片5.png' alt='图片5' /></p><p></p><p>比较常用的设计手法是箭头。然而，确保这些进行前后切换的箭头有足够的的尺寸和对比度非常关键因为箭头经常被用户忽视(有些设计是用户hover时才出现箭头)；</p><p> </p><p>如果想带来更好的切换按钮体验，可以让功能效果更纯粹直观，那么可以考虑留出前一张以及后一张轮播图的部分内容并配合前后的切换按钮，留出适当的用户预期正如下图中亚马逊做的这样：</p><p></p><p><img src='../images/article/轮播十条规则/图片6.png' alt='图片6' /></p><p></p><p>当轮播内容的颜色对箭头会造成一定干扰的时候，可以考虑通过颜色的变化保留切换按钮的可识别性：</p><p></p><p><img src='../images/article/轮播十条规则/图片7.png' alt='图片7' /></p><p></p><p>除了传统的设计样式像是用来感知位置的小点和前后切换的箭头，“<strong>table of contents</strong>”这种设计样式同样也能起到一样的效果 — 首先，它结合了位置感知和手动切换的控件为一个整体的UI组件。 其次，它能为用户提供了一定的轮播信息线索，让用户知道接下来会看到什么因而可以让用户更有效的进行跨帧的切换：</p><p></p><p><img src='../images/article/轮播十条规则/图片8.png' alt='图片8' /></p><p></p><h4><a name='header-c819' class='md-header-anchor '></a>4.Everything Is Different On Touch Devices Link</h4><h5><a name='header-c820' class='md-header-anchor '></a>在触控设备上的规则会稍显不同</h5><p> </p><p>经过几年来在移动端商业网站的研究学习，我们发现轮播在桌面端与移动端的交互逻辑都有着明显的差异。那么，我们需要知道些非常重要的细节在移动端上：</p><p></p><h5><a name='header-c827' class='md-header-anchor '></a>细节一：没有hover状态，所以不能使用自动轮播</h5><p></p><p><img src='../images/article/轮播十条规则/图片10.png' alt='图片10' /></p><p></p><p><em>这里是针对Toy’s’R’Us(玩具反斗城）的移动端一个轮播内容的测试，当测试对象希望点击这个Spring into summer mega sale的轮播内容时，很不幸由于自动轮播间隔时长很短，导致对象误点进入到了bike blast的详情页。</em></p><p></p><p>在实践中表明自动轮播并不适合移动端以及触控设备，因为这类型的设备中缺少hover暂停的状态。如果无法提供给用户合适的聚焦，那么也不可能知晓用户是否会有潜在的兴趣以及进一步点击的行为。这是我们基于大量的移动端可用性测试中观察到的结果。</p><p> </p><p>在商业移动端可用性测试中我们提及到，有56%的商业移动端网站在首页采用了轮播图，其中<strong>31%</strong>的移动网站拥有自动轮播，<strong>25%</strong>采用的手动轮播。换句话说，近一半有轮播图的移动端网站都开始接受不做自动轮播了。</p><p> </p><h5><a name='header-c842' class='md-header-anchor '></a>细节二：始终支持滑动手势</h5><p>用户在触屏设备上的操作预期就是滑动来进行导航切换。传统的轮播图操作控件同样重要(如进行前后切换的箭头 和让用户感知位置的小点)。</p><p> </p><h5><a name='header-c847' class='md-header-anchor '></a>细节三：优化移动端的设计适配性</h5><p>许多在PC端上使用的轮播图设计稿是直接缩放后在移动端上重复使用这造成在移动端屏幕上许多文案的阅读性较差。</p><p> </p><p>移动端用户对加载较慢的轮播图更没有耐心( <em>用户在PC端可以边花费1到5秒钟来等待轮播图刷新边浏览网页的导航栏和其他信息，而在移动端有限的屏幕大小下用户只能看到轮播图</em>)。</p><p></p><p></p><p><img src='../images/article/轮播十条规则/图片11.png' alt='图片11' /></p><p><img src='../images/article/轮播十条规则/图片12.png' alt='图片12' /></p></div>
+
+
+          <!-- <div class="_card" style="background:#efefef;height:110px;padding-top:5px;">
+              <div class="_withecard" style="background:#fff;height:100px;">
+              	<div class="list">
+
+                   <a class="item item-thumbnail-left" href="http://act.vip.xunlei.com/kn/2016/mothersday/" style="padding-top:30px;/*padding-left:180px;*/border:none;">
+                      <img src="images/article/手工信封/_more.jpg" style="position: absolute;top: 0px;left: 0px;max-width:100%;max-height:100%;width:auto;height:auto;">
+                      <h2>迅雷快鸟 | 母亲节的一封信</h2>
+                      <p>h5</p>
+
+                   </a>
+                </div>
+
+             
+              </div>	
+          </div> -->
+
+
+          <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="营销类h5转化率&二次传播率" data-title="营销类h5转化率&二次传播率" data-url="http://www.karelus.com/mobile/营销类h5转化率&二次传播率.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"karelus"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+       	
+       </div>
+    </ion-content>
+
+    <script type="text/javascript">
+       wx.onMenuShareAppMessage({
+         title: '', // 分享标题
+         desc: '纪录琐碎却重要的事', // 分享描述
+         link: '', // 分享链接
+         imgUrl: '', // 分享图标
+         type: '', // 分享类型,music、video或link，不填默认为link
+         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+          success: function () { 
+             // 用户确认分享后执行的回调函数
+            },
+          cancel: function () { 
+             // 用户取消分享后执行的回调函数
+            } 
+        });  
+
+    </script>
+
+    </body>
+
+
+
+</html>
