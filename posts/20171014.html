@@ -1,0 +1,198 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>如何提升首页效率</title>
+    <link rel="stylesheet" type="text/css" href="../css/ionic.min.css" />
+    <script src="../js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('ionicApp', function($scope) {
+
+    });
+    </script>
+    <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    .button.button-positive {
+     border-color: transparent;
+     background-color: #d87316;
+    }
+
+    .button.button-positive.active, .button.button-positive.activated {
+      border-color: #a2a2a2;
+      background-color: #b86212; 
+    }
+    </style>
+</head>
+<body>
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" href="../index.html">返回</a>
+      <h1 class="title">Pinterest如何提升首页效率</h1>
+    </ion-header-bar>
+
+    <ion-content>
+       <div>
+          <div class="_banner">
+              <img src="../images/article/20171014/_cover.jpg" style="width: 100%;">
+          </div>
+
+          <div class="_title" style="padding: 15px;">
+          	 <h3>Pinterest如何提升首页效率</h3>
+          	 <p style="color:#666;"><i class="icon ion-ios-paper-outline" style="padding-right: 5px;"></i>mark | 谢晓聪</p>
+          </div>
+
+          <div class="_article" style="padding: 15px;font-size:1.2em;letter-spacing:2px;line-height:1.5;">
+          	  
+              <strong>#快速获取同类型内容#</strong>
+              <br/>
+              <br/>
+              Pinterest在首页下，有一个“more”的小圆圈按钮，当用户感兴趣某一张图的内容时，可以通过点击小圆圈按钮进行相关内容的快速匹配并替换当前页面的剩余内容。
+              <br/>
+              <br/>
+              <img src="../images/article/20171014/1.jpg" style="width: 100%;">
+              <br/>
+              <br/>
+              这个小功能帮助用户节省了获取目标信息的路径成本，按之前操作方式是需要用户进入单张图片的详情页，通过详情页进行相关内容的推荐再分发。而现在只需要一步就能在首页进行快速的同类型/标签归属下的内容进行匹配推送。
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <strong>#快速添加收藏夹#</strong>
+              <br/>
+              <br/>
+              快速添加收藏夹，是在用户点击收藏的按钮后默认给用户推荐N个已命名的收藏夹，这类收藏夹的名称是由系统自动判断并生成。而生成的名称基本比较符合用户对当前操作图片的类别预期，所以我猜测Pinterest的默认推荐收藏夹命名逻辑是根据当前图片的标签/分类/其他用户使用轨迹的综合判定而定的。
+              <br/>
+              <br/>
+              <img src="../images/article/20171014/2.jpg" style="width: 100%;">
+              <br/>
+              <br/>
+              这样的功能，能帮助用户节省输入成本，对于有整理（归类）需求的用户而言是个非常高效且易用性比较高的操作行为。
+              <br/>
+              <br/>
+              
+
+
+
+              <div class="_remian">
+    	           <div class="card">
+    	               <div class="item item-divider" style="font-size: 0.6em;">
+                          <img src="../images/article/LEGO相框/_locker.png" style="width: 18%;">
+                       </div>
+                       <div class="item item-text-wrap" style="font-size:12px;">
+                           <i class="icon ion-ios-email-outline" style="padding-right: 5px;"></i>562820976@qq.com | 联系
+                       </div>
+    	           </div>
+              </div>
+
+              <!-- <div class="list">
+
+                   <a class="item item-thumbnail-left" href="#" style="padding-top: 30px;">
+                      <img src="images/article/营销类h5/_more.jpg">
+                      <h2>迅雷9交互组件库设计</h2>
+                      <p>交互设计</p>
+
+                   </a>
+              </div> -->
+
+
+          </div>
+
+          <div class="_card" style="background:#efefef;height:110px;padding-top:5px;">
+              <div class="_withecard" style="background:#fff;height:100px;">
+              	<div class="list" ng-controller="PopupCtrl">
+
+                   <a class="item item-thumbnail-left" href="20170722.html" ng-click="showAlert()" style="padding-top:30px;/*padding-left:180px;*/border:none;">
+                      <img src="../images/article/20170722/_more.jpg" style="position: absolute;top: 0px;left: 0px;max-width:100%;max-height:100%;width:auto;height:auto;">
+                      <h2>以用户为核心：同理心法则</h2>
+                      <p>推荐阅读</p>
+                   </a>
+
+                   <!--alert点击弹窗js-->
+                             <script type="text/javascript">
+                                angular.module('ionicApp', ['ionic'])
+                                .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+                                 // Triggered on a button click, or some other target
+                                 $scope.showPopup = function() {
+                                   $scope.data = {}
+
+                                   // An elaborate, custom popup
+                                   var myPopup = $ionicPopup.show({
+                                     template: '<input type="password" ng-model="data.wifi">',
+                                     title: 'Enter Wi-Fi Password',
+                                     subTitle: 'Please use normal things',
+                                     scope: $scope,
+                                     buttons: [
+                                       { text: 'Cancel' },
+                                       {
+                                         text: '<b>Save</b>',
+                                         type: 'button-positive',
+                                         onTap: function(e) {
+                                           if (!$scope.data.wifi) {
+                                             //don't allow the user to close unless he enters wifi password
+                                             e.preventDefault();
+                                           } else {
+                                             return $scope.data.wifi;
+                                           }
+                                         }
+                                       },
+                                     ]
+                                   });
+                                   myPopup.then(function(res) {
+                                     console.log('Tapped!', res);
+                                   });
+                                   $timeout(function() {
+                                      myPopup.close(); //close the popup after 3 seconds for some reason
+                                   }, 3000);
+                                  };
+
+
+                                   // An alert dialog
+                                   $scope.showAlert = function() {
+                                     var alertPopup = $ionicPopup.alert({
+                                       title: '诶呀！内容还没准备好',
+                                       template: '本内容将于7月31日更新，谢谢关注！',
+                                       okText: '好的'
+                                     });
+                                     alertPopup.then(function(res) {
+                                       console.log('Thank you for not eating my delicious ice cream cone');
+                                     });
+                                   };
+                                });
+                             </script>
+                </div>
+
+             
+              </div>	
+          </div>
+
+
+          <!-- 多说评论框 start -->
+ <!-- <div class="ds-thread" data-thread-key="营销类h5转化率&二次传播率" data-title="营销类h5转化率&二次传播率" data-url="http://www.karelus.com/mobile/营销类h5转化率&二次传播率.html"></div> -->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!-- <script type="text/javascript">
+var duoshuoQuery = {short_name:"karelus"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script> -->
+<!-- 多说公共JS代码 end -->
+       	
+       </div>
+    </ion-content>
+
+
+    </body>
+
+
+
+</html>
