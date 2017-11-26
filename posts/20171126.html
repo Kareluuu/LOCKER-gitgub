@@ -1,0 +1,222 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>如何提升首页效率</title>
+    <link rel="stylesheet" type="text/css" href="../css/ionic.min.css" />
+    <script src="../js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('ionicApp', function($scope) {
+
+    });
+    </script>
+    <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    .button.button-positive {
+     border-color: transparent;
+     background-color: #d87316;
+    }
+
+    .button.button-positive.active, .button.button-positive.activated {
+      border-color: #a2a2a2;
+      background-color: #b86212; 
+    }
+    </style>
+</head>
+<body>
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" href="../index.html">返回</a>
+      <h1 class="title">Ins快拍内容预期设计</h1>
+    </ion-header-bar>
+
+    <ion-content>
+       <div>
+          <div class="_banner">
+              <img src="../images/article/20171126/cover1.jpg" style="width: 100%;">
+          </div>
+
+          <div class="_title" style="padding: 15px;">
+          	 <h3>Ins快拍内容预期设计</h3>
+          	 <p style="color:#666;"><i class="icon ion-ios-paper-outline" style="padding-right: 5px;"></i>mark | 谢晓聪</p>
+          </div>
+
+          <div class="_article" style="padding: 15px;font-size:1.2em;letter-spacing:2px;line-height:1.5;">
+          	  
+              <strong>#老版的设计#</strong>
+              <br/>
+              <br/>
+              Ins在10月份之前的版本（印象中是这个时间）中，快拍在“关注”内容流中还是以类似顶部的设计以用户头像为元素来透出内容的，如下图所示：
+              <br/>
+              <br/>
+              <img src="../images/article/20171126/1.jpg" style="width: 100%;">
+              <br/>
+              <br/>
+              用户可以通过点击目标头像来阅览对象的快拍内容，但这个阶段在点击头像前用户所感知到的只有目标对象本身以及是否阅览过此内容（的提示），仅仅这两个维度的感知。
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <strong>#新版的设计#</strong>
+              <br/>
+              <br/>
+              通过下图，我们可以清晰的看到，在内容流中除了上面所提到的对象以及是否打开过这个两个维度，还增加了快拍内容本身的透出，新增了一个内容预期的阅读维度。这样可以
+              让用户在打开快拍前先注意到快拍本身所涉及到的内容场景以及可点击区域的扩大（Fitts定律）。
+              <br/>
+              <br/>
+              <img src="../images/article/20171126/2.jpg" style="width: 100%;">
+              <br/>
+              <br/>
+              <strong>#闲谈:为什么需要重视用户预期的设计#</strong>
+              <br/>
+              <br/>
+              关键词：控制感，心流理论（flow）;
+              <br/>
+              <br/>
+              首先控制感是人对于周围环境的信念控制能力。在用户体验设计的语境下，“控制感”可用以描述使用者对于使用产品的信心或受挫程度、亦可用于描述产品本身的易用性。
+              <br/>
+              <br/>
+              如果用户在使用产品或完成任务时，有较高的“控制感”，那么用户的态度会更积极，更愿意接受挫折及试错，也更拥有安全感。我们在用户体验设计过程中，应当保障用户的“控制感”，以提升用户的参与度和探索意愿。
+              <br/>
+              <br/>
+              如何提升控制感的设计思路：1.能够预期交互及反馈模式;2.物品形态与功能一致(设计的示能);3.反馈正向激励正确的行为;4.容许犯错误;5.容许犯错误;6.必要时给予选择;7.反馈及时;
+              <br/>
+              <br/>
+              同时，在心流理论中，用户约对事物有控制感，是促成心流体验的必要不充分条件；Csikszentmihalyi 认为是一种最佳的体验，能帮助用户建立起与产品之前的忠诚度。
+              <br/>
+              <br/>
+
+
+
+
+
+
+
+
+              
+
+
+
+              <div class="_remian">
+    	           <div class="card">
+    	               <div class="item item-divider" style="font-size: 0.6em;">
+                          <img src="../images/locker-gray.png" style="width: 18%;">
+                       </div>
+                       <div class="item item-text-wrap" style="font-size:12px;">
+                           <i class="icon ion-ios-email-outline" style="padding-right: 5px;"></i>562820976@qq.com | 联系
+                       </div>
+    	           </div>
+              </div>
+
+              <!-- <div class="list">
+
+                   <a class="item item-thumbnail-left" href="#" style="padding-top: 30px;">
+                      <img src="images/article/营销类h5/_more.jpg">
+                      <h2>迅雷9交互组件库设计</h2>
+                      <p>交互设计</p>
+
+                   </a>
+              </div> -->
+
+
+          </div>
+
+          <div class="_card" style="background:#efefef;height:110px;padding-top:5px;">
+              <div class="_withecard" style="background:#fff;height:100px;">
+              	<div class="list" ng-controller="PopupCtrl">
+
+                   <a class="item item-thumbnail-left" href="20171014.html" ng-click="showAlert()" style="padding-top:30px;/*padding-left:180px;*/border:none;">
+                      <img src="../images/article/20171126/more.jpg" style="position: absolute;top: 0px;left: 0px;max-width:100%;max-height:100%;width:auto;height:auto;">
+                      <h2>Pinterest如何提升首页效率</h2>
+                      <p>推荐阅读</p>
+                   </a>
+
+                   <!--alert点击弹窗js-->
+                             <script type="text/javascript">
+                                angular.module('ionicApp', ['ionic'])
+                                .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+                                 // Triggered on a button click, or some other target
+                                 $scope.showPopup = function() {
+                                   $scope.data = {}
+
+                                   // An elaborate, custom popup
+                                   var myPopup = $ionicPopup.show({
+                                     template: '<input type="password" ng-model="data.wifi">',
+                                     title: 'Enter Wi-Fi Password',
+                                     subTitle: 'Please use normal things',
+                                     scope: $scope,
+                                     buttons: [
+                                       { text: 'Cancel' },
+                                       {
+                                         text: '<b>Save</b>',
+                                         type: 'button-positive',
+                                         onTap: function(e) {
+                                           if (!$scope.data.wifi) {
+                                             //don't allow the user to close unless he enters wifi password
+                                             e.preventDefault();
+                                           } else {
+                                             return $scope.data.wifi;
+                                           }
+                                         }
+                                       },
+                                     ]
+                                   });
+                                   myPopup.then(function(res) {
+                                     console.log('Tapped!', res);
+                                   });
+                                   $timeout(function() {
+                                      myPopup.close(); //close the popup after 3 seconds for some reason
+                                   }, 3000);
+                                  };
+
+
+                                   // An alert dialog
+                                   $scope.showAlert = function() {
+                                     var alertPopup = $ionicPopup.alert({
+                                       title: '诶呀！内容还没准备好',
+                                       template: '本内容将于7月31日更新，谢谢关注！',
+                                       okText: '好的'
+                                     });
+                                     alertPopup.then(function(res) {
+                                       console.log('Thank you for not eating my delicious ice cream cone');
+                                     });
+                                   };
+                                });
+                             </script>
+                </div>
+
+             
+              </div>	
+          </div>
+
+
+          <!-- 多说评论框 start -->
+ <!-- <div class="ds-thread" data-thread-key="营销类h5转化率&二次传播率" data-title="营销类h5转化率&二次传播率" data-url="http://www.karelus.com/mobile/营销类h5转化率&二次传播率.html"></div> -->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!-- <script type="text/javascript">
+var duoshuoQuery = {short_name:"karelus"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script> -->
+<!-- 多说公共JS代码 end -->
+       	
+       </div>
+    </ion-content>
+
+
+    </body>
+
+
+
+</html>
