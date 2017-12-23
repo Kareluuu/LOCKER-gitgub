@@ -1,0 +1,271 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>抽屉</title>
+    <link rel="stylesheet" type="text/css" href="../css/ionic.min.css" />
+    <script src="../js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('ionicApp', function($scope) {
+
+    });
+    </script>
+    <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    .button.button-positive {
+     border-color: transparent;
+     background-color: #d87316;
+    }
+
+    .button.button-positive.active, .button.button-positive.activated {
+      border-color: #a2a2a2;
+      background-color: #b86212; 
+    }
+    .GrayLetters{
+      color: #669999;
+      font-size: 15px;
+      margin: 0px 5px 0;
+      line-height: 30px;
+    }
+    </style>
+</head>
+<body>
+
+    <ion-header-bar class="bar bar-header bar-light">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" href="../index.html">返回</a>
+      <h1 class="title">关于筛选器的设计</h1>
+    </ion-header-bar>
+
+    <ion-content>
+       <div>
+          <div class="_banner">
+              <img src="../images/article/20171223/cover1.jpg" style="width: 100%;">
+          </div>
+
+          <div class="_title" style="padding: 15px;">
+          	 <h3>关于筛选器的设计</h3>
+          	 <p style="color:#666;"><i class="icon ion-ios-paper-outline" style="padding-right: 5px;"></i>mark | 谢晓聪</p>
+          </div>
+
+          <div class="_article" style="padding: 15px;font-size:1.2em;letter-spacing:2px;line-height:1.5;">
+          	  
+              <strong>#筛选器#</strong>
+              <br/>
+              <br/>
+              大量数据集需要额外的过滤，也叫做筛选。筛选依赖于用户的选择标准，从而细化搜索结果集或一组大型对象。常见的过滤模式包括：
+              <br/>
+              <br/>
+              <p class="GrayLetters">
+                ·直列式筛选器（Onscreen Filter）
+                <br/>
+                ·抽屉/折叠式筛选器（Filter Drawer）
+                <br/>
+                ·对话框式筛选器（Filter Dialog）
+                <br/>
+                ·表格式筛选器（Filter Form）
+              </p>
+              <br/>
+              <br/>
+              
+              <strong>#直列式筛选器#</strong>
+              <br/>
+              <br/>
+              与页面的元素排序逻辑以及展示方式类似，屏幕上直接显示对象结果或者对象列表。通过设计tab按钮来筛选目标对象。HeyZap使用标准按钮tab栏，而谷歌采用单排横向式。
+              <br/>
+              <br/>
+              <img src="../images/article/20171223/1.jpg" style="width: 100%;">
+              <p class="GrayLetters">左为HeyZap，右为Google</p>
+              <br/>
+              <br/>
+              Google的筛选器点击最右侧的“搜索工具”时，会额外展示出一列新的筛选条辅助进一步的筛选。
+              <br/>
+              <img src="../images/article/20171223/2.jpg" style="width: 100%;">
+               <p class="GrayLetters">右为新增筛选条</p>
+              <br/>
+              <br/>
+              Google Play报停采用了双排筛选条，根据用户感兴趣的检索词匹配出“内容相关”以及“媒体相关”两类筛选偏好。
+              <br/>
+              <br/>
+              <img src="../images/article/20171223/3.jpg" style="width: 100%;">
+              <p class="GrayLetters">Google Play报停</p>
+              <br/>
+              <br/>
+              注意：最好不要尝试用此类设计法则去做主导航，而是作为过滤相关内容的时候采取这种方法。
+              <br/>
+              <br/>
+              SXSW提供了一双排不同维度的筛选器，Feed a Fever news reader运用了一个超级简单的组合单排筛选器，通过描述+被描述的对象（筛选器）来建立起一个清晰易懂的概念模型。
+              <br/>
+              <img src="../images/article/20171223/4.jpg" style="width: 100%;">
+              <p class="GrayLetters">左为SXSW，右为Feed a Fever news reader</p>
+              筛选器应该措辞明确，且易于理解。被选中的筛选项应及时告知用户或者呈现出已被选的反馈提示。
+              <br/>
+              <br/>
+              <strong>#抽屉/折叠式筛选器#</strong>
+              <br/>
+              <br/>
+              CNN新闻采取的是抽屉/折叠式筛选器，通过一个handle来提示筛选器的入口，用户通过点击可以将被折叠/收起的筛选器浮层展示出来。
+              <br/>
+              <img src="../images/article/20171223/5.jpg" style="width: 100%;">
+              <br/>
+              <br/>
+              包括作为全球最大的在线旅游公司Expedia，也是采用了折叠式的筛选器。但Expedia有一点做的非常好，就是在筛选器展开时如何给用户预期匹配的结果数量，在右图中，下方会有一个
+              常驻的bar，上面展示了根据目前的筛选项组合后匹配的结果数量，这样能保证用户在筛选器展开的状态下依然能感知到结果页的结果范围，确保用户不用担心因为筛出来的结果太少或没有
+              而反复展开或收起筛选器。
+              <br/>
+              <br/>
+              <img src="../images/article/20171223/6.jpg" style="width: 100%;">
+              <p class="GrayLetters">Expedia</p>
+              <br/>
+              <br/>
+              <strong>#对话框&表格式式筛选器#</strong>
+              <br/>
+              <br/>
+              在早起的一些app上会采用对话框式的筛选器，比如说Trip Advisor，但现在他们也开始采用折叠式的筛选器。
+              <br/>
+              <img src="../images/article/20171223/7.jpg" style="width: 100%;">
+              <p class="GrayLetters">Trip Advisor在2012年的筛选器（左）和2017年的筛选器（右）</p>
+              <br/>
+              <br/>
+              注意：保持选项列表短，避免滚动。考虑一个更长或多选择过滤选项过滤形式。不要过度设计过滤器，一个简单的屏幕过滤器或抽屉通常就足够了。
+              如果需要筛选器表单，请遵循表单设计最佳实践。
+              <br/>
+              -Theresa Neil
+              <br/>
+              <br/>
+
+
+
+              
+
+
+
+
+
+
+              
+
+
+
+              <div class="_remian">
+    	           <div class="card">
+    	               <div class="item item-divider" style="font-size: 0.6em;">
+                          <img src="../images/locker-gray.png" style="width: 18%;">
+                       </div>
+                       <div class="item item-text-wrap" style="font-size:12px;">
+                           <i class="icon ion-ios-email-outline" style="padding-right: 5px;"></i>562820976@qq.com | 联系
+                       </div>
+    	           </div>
+              </div>
+
+              <!-- <div class="list">
+
+                   <a class="item item-thumbnail-left" href="#" style="padding-top: 30px;">
+                      <img src="images/article/营销类h5/_more.jpg">
+                      <h2>迅雷9交互组件库设计</h2>
+                      <p>交互设计</p>
+
+                   </a>
+              </div> -->
+
+
+          </div>
+
+          <div class="_card" style="background:#efefef;height:110px;padding-top:5px;">
+              <div class="_withecard" style="background:#fff;height:100px;">
+              	<div class="list" ng-controller="PopupCtrl">
+
+                   <a class="item item-thumbnail-left" href="20171126.html" ng-click="showAlert()" style="padding-top:30px;/*padding-left:180px;*/border:none;">
+                      <img src="../images/article/20171223/more.jpg" style="position: absolute;top: 0px;left: 0px;max-width:100%;max-height:100%;width:auto;height:auto;">
+                      <h2>Ins快拍用户预期设计内容更新</h2>
+                      <p>推荐阅读</p>
+                   </a>
+
+                   <!--alert点击弹窗js-->
+                             <script type="text/javascript">
+                                angular.module('ionicApp', ['ionic'])
+                                .controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+                                 // Triggered on a button click, or some other target
+                                 $scope.showPopup = function() {
+                                   $scope.data = {}
+
+                                   // An elaborate, custom popup
+                                   var myPopup = $ionicPopup.show({
+                                     template: '<input type="password" ng-model="data.wifi">',
+                                     title: 'Enter Wi-Fi Password',
+                                     subTitle: 'Please use normal things',
+                                     scope: $scope,
+                                     buttons: [
+                                       { text: 'Cancel' },
+                                       {
+                                         text: '<b>Save</b>',
+                                         type: 'button-positive',
+                                         onTap: function(e) {
+                                           if (!$scope.data.wifi) {
+                                             //don't allow the user to close unless he enters wifi password
+                                             e.preventDefault();
+                                           } else {
+                                             return $scope.data.wifi;
+                                           }
+                                         }
+                                       },
+                                     ]
+                                   });
+                                   myPopup.then(function(res) {
+                                     console.log('Tapped!', res);
+                                   });
+                                   $timeout(function() {
+                                      myPopup.close(); //close the popup after 3 seconds for some reason
+                                   }, 3000);
+                                  };
+
+
+                                   // An alert dialog
+                                   $scope.showAlert = function() {
+                                     var alertPopup = $ionicPopup.alert({
+                                       title: '诶呀！内容还没准备好',
+                                       template: '本内容将于7月31日更新，谢谢关注！',
+                                       okText: '好的'
+                                     });
+                                     alertPopup.then(function(res) {
+                                       console.log('Thank you for not eating my delicious ice cream cone');
+                                     });
+                                   };
+                                });
+                             </script>
+                </div>
+
+             
+              </div>	
+          </div>
+
+
+          <!-- 多说评论框 start -->
+ <!-- <div class="ds-thread" data-thread-key="营销类h5转化率&二次传播率" data-title="营销类h5转化率&二次传播率" data-url="http://www.karelus.com/mobile/营销类h5转化率&二次传播率.html"></div> -->
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<!-- <script type="text/javascript">
+var duoshuoQuery = {short_name:"karelus"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script> -->
+<!-- 多说公共JS代码 end -->
+       	
+       </div>
+    </ion-content>
+
+
+    </body>
+
+
+
+</html>
