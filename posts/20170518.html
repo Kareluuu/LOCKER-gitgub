@@ -1,0 +1,229 @@
+<html ng-app="ionicApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<title>轮播图的十条规则</title>
+<link rel="stylesheet" type="text/css" href="../css/ionic.min.css" />
+<script src="../js/ionic.bundle.min.js"></script>
+<script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('MyCtrl', function($scope) {
+
+    });
+</script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { background: rgb(181, 214, 252); text-shadow: none; }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: visible; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+.typora-export #write { margin: 0px auto; }
+#write > p:first-child, #write > ul:first-child, #write > ol:first-child, #write > pre:first-child, #write > blockquote:first-child, #write > div:first-child, #write > table:first-child { margin-top: 30px; }
+#write li > table:first-child { margin-top: -20px; }
+img { max-width: 100%; vertical-align: middle; }
+input, button, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+::before, ::after, * { box-sizing: border-box; }
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre { width: inherit; }
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6 { position: relative; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+p { -webkit-margin-before: 1rem; -webkit-margin-after: 1rem; -webkit-margin-start: 0px; -webkit-margin-end: 0px; }
+.mathjax-block { margin-top: 0px; margin-bottom: 0px; -webkit-margin-before: 0rem; -webkit-margin-after: 0rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: bold; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-radius: 4px; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; margin: 4px 0px 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+pre { white-space: pre-wrap; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences .CodeMirror.CodeMirror-wrap { top: -1.6em; margin-bottom: -1.6em; }
+.md-fences.mock-cm { white-space: pre-wrap; }
+.show-fences-line-number .md-fences { padding-left: 0px; }
+.show-fences-line-number .md-fences.mock-cm { padding-left: 40px; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; padding-top: 1em; padding-bottom: 1em; }
+.footnotes + .footnotes { margin-top: -1em; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: transparent; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: normal; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li p, li .mathjax-block { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; }
+@media print {
+  html, body { height: 100%; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid-page; orphans: 2; }
+  p { orphans: 4; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0mm; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 2.86rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.mathjax-block { white-space: pre; overflow: hidden; width: 100%; }
+p + .mathjax-block { margin-top: -1.143rem; }
+.mathjax-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: none; box-shadow: none; }
+.task-list { list-style-type: none; }
+.task-list-item { position: relative; padding-left: 1em; }
+.task-list-item input { position: absolute; top: 0px; left: 0px; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc::after, .md-toc-content::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: bold; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+.md-tag { opacity: 0.5; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: monospace; }
+code { text-align: left; }
+h1 .md-tag, h2 .md-tag, h3 .md-tag, h4 .md-tag, h5 .md-tag, h6 .md-tag { font-weight: initial; opacity: 0.35; }
+a.md-print-anchor { border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: none !important; background: transparent !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.mathjax-block .MathJax_SVG_Display { text-align: center; margin: 1em 0em; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: monospace; }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: normal; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: normal; src: local("Open Sans Regular"), url("./github/400.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: normal; src: local("Open Sans Italic"), url("./github/400i.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: bold; src: local("Open Sans Bold"), url("./github/700.woff") format("woff"); }
+@font-face { font-family: "Open Sans"; font-style: italic; font-weight: bold; src: local("Open Sans Bold Italic"), url("./github/700i.woff") format("woff"); }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 20px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+body > :first-child { margin-top: 0px !important; }
+body > :last-child { margin-bottom: 0px !important; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border-width: 0px 0px 1px; border-style: none none solid; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; overflow: hidden; box-sizing: content-box; border-bottom-color: rgb(221, 221, 221); }
+body > h2:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child { margin-top: 0px; padding-top: 0px; }
+body > h1:first-child + h2 { margin-top: 0px; padding-top: 0px; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child { margin-top: 0px; padding-top: 0px; }
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 { margin-top: 0px; padding-top: 0px; }
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p { margin-top: 0px; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(221, 221, 221); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(204, 204, 204); background-color: white; margin: 0px; padding: 0px; }
+table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(204, 204, 204); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); }
+.md-fences, code, tt { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding: 8px 1em 6px; }
+.task-list { padding-left: 0px; }
+.task-list-item { padding-left: 32px; }
+.task-list-item input { top: 3px; left: 8px; }
+@media screen and (min-width: 914px) {
+}
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border: 1px solid rgb(221, 221, 221); border-radius: 3px; font-family: Consolas, "Liberation Mono", Courier, monospace; padding: 2px 4px 0px; font-size: 0.9em; color: inherit; }
+.md-tag { color: inherit; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+#md-notification::before { top: 10px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.117647); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+
+
+
+
+
+
+</style>
+</head>
+<body class='typora-export' >
+<ion-header-bar class="bar bar-header bar-light">
+      <a class="button icon-left ion-chevron-left button-clear button-dark" href="../index.html">返回</a>
+      <h1 class="title">轮播图的十条规则</h1>
+</ion-header-bar>
+
+<ion-content>
+  <div  id='write'  class = 'is-node'><h3><a name='header-n0' class='md-header-anchor '></a>轮播图的十条规则</h3><hr /><p><em>谢晓聪 | 翻译</em></p><p></p><p><em>请问首页中的轮播效果真的能帮到用户吗？还是说，使用轮播是因为他是比较流行且通俗的一种展示工具，可以用来解决庞大组织中谁能占据首屏相对优质的banner位置的争论问题？</em></p><p></p><p>我们得到的答案是轮播的确能在首页中起到一定的作用。但是，在实践过程中绝大多数的表现在用户层面看来都是欠佳的。</p><p> </p><p>在Baymard研究协会中，我们进行了大规模可用性测试的实践，在过去的7年中同时兼顾桌面以及移动端的网站测试。测试的结果显示如果我们能遵循10条要求，那么在首页的轮播机制是能够达到令人满意的表现的。很重要的一点，在实现过程中需要区分桌面端与移动端。</p><p></p><p><img src='../images/article/轮播十条规则/1.png' alt='1' /></p><p></p><hr /><h5><a name='header-n91' class='md-header-anchor '></a>滑动的顺序以及目的</h5><p></p><p>大多数用户不会看完所有的首页轮播内容，哪怕是自动轮播。他们不会一直傻傻的待在首页很长时间，实际上很快他们会根据自己的目的以及需求离开首页去往其他页面。所以更加不会老实的聚焦于你的首页轮播区域。</p><p> </p><p>测试期间，在完成一次完整的轮播循环之前，我们测试对象通常会进入到其他页面或者在自动轮播完成一个循环前滚动滑鼠离开进行进一步的浏览操作。而且这还是自动轮播的情况下，很显然，手动轮播只会让轮播停留在第一张直到测试对象去主动切换。另一个潜台词就是没有人可以预测用户下一步到底会看哪 一帧轮播图。</p><p> </p><p>我们之前做的轮播图可用性研究(仔细安排每一帧的展示内 容和顺序)只对少数案例网站效果有一定的提高，这恰恰证 明了一个大问题 — 大部分用户根本不会看这些轮播图，因 此除非用户主动去找不然他们不会注意到那些有用的信息。 所以，即使完善轮播图的细节设计是一个很好的想法，但这 并不能成为用户获取网站信息的唯一方式。</p><p></p><p><strong>把最重要的内容优先排布</strong></p><p> </p><p><strong>把轮播工具当成网站特色的高光点来使用，但千万不要让轮播图中承载的功能或者内容成为整个网站唯一的访问渠道</strong></p><p></p><hr /><h5><a name='header-n163' class='md-header-anchor '></a>自动轮播的基本逻辑</h5><p>自动轮播可以扩散内部的曝光率，当手动轮播只能带来可怜的1%-2%的点击率时，自动轮播却可以带来8%-10%的点击率，相对手动轮播来说数据更好看点。但有一点还是要注意：正如所有的动态图的效果一样，自动轮播的内容会把用户的注意力从静态的内容中吸引过来。因此，我们要设计更高质量以及更具有设计感的轮播内容才能充分利用这种优势。</p><p> </p><p>关于自动轮播的三个细节至关重要，如果我们能注意那么会带来很大的效果提升：</p><p></p><h5><a name='header-n219' class='md-header-anchor '></a>细节一：自动切换的时间间隔不宜太快</h5><p>如果轮播得太快那么用户就没有足够的时间看完感兴 趣的轮播图内容；</p><p> </p><p>如果轮播的太快那么用户就会因为不感兴趣的轮播内 容而被骚扰；</p><p> </p><p>轮播图的展示时间应该根据轮播图的文案内容来决 定 — 尼尔森诺曼集团推荐自动轮播图的单帧时长按照1秒 展示3个文案来播放，这就意味着每个轮播图的展示时长 都是独立的；</p><p> </p><p><img src='../images/article/轮播十条规则/2.png' alt='2' /></p><p></p><p>像苹果轮播这样将展示时间外露出来，从情感设计角度能提高用户的arousl程度，从而使用户的关注范围缩小，提升聚焦程度，为轮播内容带来更高质量的关注度，但是否会继续产生点击行为，那么更多的就取决于轮播图本身的质量了；</p><p></p><h5><a name='header-n272' class='md-header-anchor '></a>细节二：当hover轮播内容时，应该暂停自动轮播</h5><p>Web information seeking and interaction 指出用户鼠标 的位置与他们在当前页面关注的内容有内在联系 — 当 用户鼠标悬停在某一帧轮播图时说明他们对它的内容感兴趣；</p><p></p><p><img src='../images/article/轮播十条规则/3.png' alt='3' /></p><p></p><p>当用户悬停时轮播图暂停的第二个理由是防止用户在点击想看的那一帧轮播图时自动轮播到下一帧 — 如果用户意识到他们点击后跳转到一个无关的页面那么用户会 感觉很气恼和失落，并且会不得不重新回到主页然后再次点击原来想要的那一部帧轮播图；</p><p></p><h5><a name='header-n335' class='md-header-anchor '></a>细节三：当用户有任何主动交互行为时，应停止自动轮播</h5><p>当用户主动点击轮播图按钮来看前一帧或者下一帧内容时，这种行为是有意进行的并且 (当前轮播内容)不应该被改变即使用户决定去查看主页的其他内容；</p><p>点击行为是用户的主动响应行为，它是反应用户意图和兴趣的一个强烈的信号。因此，当用户主动对轮播图进行交互时(轮播图)应该停止自动轮播，因为用户极有可能是有意要查看某一帧的内容；</p><p></p><hr /><h5><a name='header-n371' class='md-header-anchor '></a>提示当前图片所在帧数位置</h5><p></p><p><img src='../images/article/轮播十条规则/4.png' alt='4' /></p><p></p><p>比较常用的设计是在一张五彩斑斓的图片上设置一组小点但这通常会很难识别，把这些点放置在图片外面会好一点；</p><p></p><h5><a name='header-n350' class='md-header-anchor '></a><strong>允许用户进行前后帧的切换</strong></h5><p></p><p><img src='../images/article/轮播十条规则/5.png' alt='5' /></p><p></p><p>比较常用的设计手法是箭头。然而，确保这些进行前后切换的箭头有足够的的尺寸和对比度非常关键因为箭头经常被用户忽视(有些设计是用户hover时才出现箭头)；</p><p> </p><p>如果想带来更好的切换按钮体验，可以让功能效果更纯粹直观，那么可以考虑留出前一张以及后一张轮播图的部分内容并配合前后的切换按钮，留出适当的用户预期正如下图中亚马逊做的这样：</p><p></p><p><img src='../images/article/轮播十条规则/6.png' alt='6' /></p><p></p><p>当轮播内容的颜色对箭头会造成一定干扰的时候，可以考虑通过颜色的变化保留切换按钮的可识别性：</p><p></p><p><img src='../images/article/轮播十条规则/7.png' alt='7' /></p><p></p><p>除了传统的设计样式像是用来感知位置的小点和前后切换的箭头，“table of contents”这种设计样式同样也能起到一样的效果 — 首先，它结合了位置感知和手动切换的控件为一个整体的UI组件。 其次，它能为用户提供了一定的轮播信息线索，让用户知道接下来会看到什么因而可以让用户更有效的进行跨帧的切换：</p><p></p><p><img src='../images/article/轮播十条规则/8.png' alt='8' /></p><p></p><hr /><h5><a name='header-n555' class='md-header-anchor '></a>在触控设备上的规则会稍显不同</h5><p>经过几年来在移动端商业网站的研究学习，我们发现轮播在桌面端与移动端的交互逻辑都有着明显的差异。那么，我们需要知道些非常重要的细节在移动端上：</p><p></p><h5><a name='header-n604' class='md-header-anchor '></a>细节一：没有hover状态，所以不能使用自动轮播</h5><p></p><p><img src='../images/article/轮播十条规则/10.png' alt='10' /></p><p></p><p><em>这里是针对Toy’s’R’Us(玩具反斗城）的移动端一个轮播内容的测试，当测试对象希望点击这个Spring into summer mega sale的轮播内容时，很不幸由于自动轮播间隔时长很短，导致对象误点进入到了bike blast的详情页。</em></p><p></p><p>在实践中表明自动轮播并不适合移动端以及触控设备，因为这类型的设备中缺少hover暂停的状态。如果无法提供给用户合适的聚焦，那么也不可能知晓用户是否会有潜在的兴趣以及进一步点击的行为。这是我们基于大量的移动端可用性测试中观察到的结果。</p><p> </p><p>在商业移动端可用性测试中我们提及到，有56%的商业移动端网站在首页采用了轮播图，其中31%的移动网站拥有自动轮播，25%采用的手动轮播。换句话说，近一半有轮播图的移动端网站都开始接受不做自动轮播了。</p><p> </p><h5><a name='header-n661' class='md-header-anchor '></a>细节二：始终支持滑动手势</h5><p>用户在触屏设备上的操作预期就是滑动来进行导航切换。传统的轮播图操作控件同样重要(如进行前后切换的箭头 和让用户感知位置的小点)。</p><p></p><h5><a name='header-n688' class='md-header-anchor '></a>细节三：优化移动端的设计适配性</h5><p> 许多在PC端上使用的轮播图设计稿是直接缩放后在移动端上重复使用这造成在移动端屏幕上许多文案的阅读性较差。</p><p> </p><p>移动端用户对加载较慢的轮播图更没有耐心( 用户在PC端可以边花费1到5秒钟来等待轮播图刷新边浏览网页的导航栏和其他信息，而在移动端有限的屏幕大小下用户只能看到轮播图)。</p><p></p><p><img src='../images/article/轮播十条规则/11.png' alt='11' /></p><p><img src='../images/article/轮播十条规则/12.png' alt='12' /></p><p></p></div>
+</ion-content>
+</body>
+</html>

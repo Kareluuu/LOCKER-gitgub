@@ -48,6 +48,28 @@
       border-color: #a2a2a2;
       background-color: #b86212; 
     }
+    .FristTitle{
+      margin: 5px 0 5px;
+      width: 10rem;
+    }
+    .SecondTitle{
+      padding-top: 5px;
+      width: 10rem;
+    }
+    .ArticleFeeds{
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+    }
+    .ArticleColumn1{
+      padding-bottom: 5px;
+      padding-left: 0.8rem
+    }
+    .ArticleColumn2{
+      padding-bottom: 5px;
+      padding-left: 1rem;
+    }
+
 
     </style>
 </head>
@@ -73,7 +95,7 @@
                 </div>
 
 
-                <!--Ins快拍的用户预期设计-->
+                <!--关于筛选器的设计-->
                 <div class="article">
                      <a href="posts/20171223.html">
                         <div class="item item-image" style="border-radius: 4px;">
@@ -100,7 +122,7 @@
                               </a>
                             </div> -->
 
-                            <!--用户体验-->
+                            <!--体验设计-->
                             <li style="margin-right: 10px;">
                               <div ng-controller="PopupCtrl">
                                     <div href="#" ng-click="showAlert()" class="list card" style="width: 130px; height: 130px; margin: 0; padding: 0; border-top: 1px solid #dadada; box-shadow: none;">
@@ -211,97 +233,53 @@
                 <!--阅读推荐-->
                 <h1 style="margin: 35px 0 0px 24px;font-size: 2em;">阅读推荐</h1>
 
+                <div class="ArticleFeeds" style="margin-top: 0.5rem; margin-left: 0.5rem;">
 
-                <!--Pinterest如何提升首页效率-->
-                <div class="article">
-                     <a href="posts/20171014.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/20171014/cover.jpg">
-                        </div>
-                     </a>
+                  <!--Insgram-->
+                  <div class="ArticleColumn1">
+                    <a href="posts/20171126.html">
+                      <div class="item item-image" style="border-radius: 4px;width: 10rem;">
+                        <img src="images/article/20171126/cover2.jpg">
+                      </div>
+                    </a>
+                    <div style="padding-top: 12px;">
+                      <p class="FristTitle" style="font-size:15px;"><strong>Ins快拍内容预期设计</strong></p>
+                      <p class="SecondTitle">体验设计</p>
+                    </div>
+                  </div>
+
+                  <!--Pinterest首页效率提升-->
+                  <div class="ArticleColumn2">
+                    <a href="posts/20171014.html">
+                      <div class="item item-image" style="border-radius: 4px;width: 10rem;">
+                        <img src="images/article/20171014/cover.jpg">
+                      </div>
+                    </a>
+                    <div style="padding-top: 12px;">
+                      <p class="FristTitle" style="font-size:15px;"><strong>Pinterest如何提升首页效率</strong></p>
+                      <p class="SecondTitle">可用性 · 体验设计</p>
+                    </div>
+                  </div>                     
+
+
                 </div>
+                  
+                
 
 
 
-                <!--Dseign Thinking:同理心-->
-                <div class="article">
-                     <a href="posts/20170722.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/20170722/cover.jpg">
-                        </div>
-                     </a>
-                </div>
 
 
 
-                <!--交互设计第六原则：约束-->
-                <div class="article">
-                     <a href="posts/20170627.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/20170627/cover.jpg">
-                        </div>
-                     </a>
-                </div>
 
 
-                <!--五个交互的基本原则-->
-                <div class="article">
-                     <a href="posts/20170619.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/20170619/cover.jpg">
-                        </div>
-                     </a>
-                </div>  
+
+
 
                 
-                <!--卡片式界面设计-->
-                <div class="article">
-                     <a href="posts/20170621.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/20170621/cover.jpg">
-                        </div>
-                     </a>
-                </div>    
 
 
-                <!--如何帮用户做更聪明的选择-->
-                <div class="article">
-                     <a href="posts/20170521.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/20170521/cover.jpg">
-                        </div>
-                     </a>
-                </div>   
-
-                <!--简述响应式导航设计-->
-                <div class="article">
-                     <a href="posts/A Brief Overview On Responsive Navigation Patterns.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/A Brief Overview On Responsive Navigation Patterns/cover.jpg">
-                        </div>
-                     </a>
-                </div>
-
-                <!--响应式网页设计-->
-                <div class="article">
-                     <a href="posts/Responsive Web Design.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/响应式网页设计/cover.jpg">
-                        </div>
-                     </a>
-                </div>       
-
-                <!--轮播图的十条规则-->
-                <div class="article">
-                     <a href="posts/轮播图的十条规则.html">
-                        <div class="item item-image" style="border-radius: 4px;">
-                           <img src="images/article/轮播十条规则/cover.jpg">
-                        </div>
-                     </a>
-                </div>      
-
-
-             </div>
+             
 
 
 
@@ -313,7 +291,7 @@
           </ion-content>
           
           <!--这里是底部TAB-->
-          <div class="tabs-striped tabs-color-assertive" style="color: #ff3728;border: 0 solid #ff3728;">
+          <!-- <div class="tabs-striped tabs-color-assertive" style="color: #ff3728;border: 0 solid #ff3728;">
             <div class="tabs">
               <a class="tab-item active" href="index.html">
                 博客
@@ -323,6 +301,6 @@
                 关于
               </a>
             </div>
-          </div>
+          </div> -->
 </body>
 </html>

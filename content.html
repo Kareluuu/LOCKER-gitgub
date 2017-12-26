@@ -1,0 +1,158 @@
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>抽屉</title>
+    <link rel="stylesheet" type="text/css" href="css/ionic.min.css" />
+    <!-- <script src="js/ionic.bundle.min.js"></script> -->
+    <script src="js/ionic.bundle-PopupNightly.js"></script>
+    <script src="js/An alert dialog.js"></script>
+    <script type="text/javascript">
+    angular.module('ionicApp', ['ionic'])
+
+    .controller('MyCtrl', function($scope) {
+
+    });
+    </script>
+
+
+    <style>
+    body {
+    cursor: url('https://www.runoob.com/static/img/finger.png'), auto;
+    }
+    .scroll-content {
+      background-color: white;
+    }
+    .article {
+      padding-top: 15px;
+  
+    }
+    .item{
+      border:none;
+    }
+    .bar.bar-light{
+      background: #fff;
+    }
+
+    .has-header{
+      top: 0;
+    }
+
+    .button.button-positive {
+     border-color: transparent;
+     background-color: #d87316;
+    }
+
+    .button.button-positive.active, .button.button-positive.activated {
+      border-color: #a2a2a2;
+      background-color: #b86212; 
+    }
+    .FristTitle{
+      margin: 5px 0 5px;
+    }
+    .SecondTitle{
+      padding-top: 5px;
+    }
+    .ArticleFeeds{
+      flex-direction: row;
+      flex-wrap: wrap;
+      display: flex;
+    }
+
+
+  
+
+    </style>
+</head>
+<body style="background:#ffff;">
+
+  <!--头部tab-->
+  <div>
+    <div class="bar bar-header bar-stable" style="background-color: #ffff;">
+     <h1 class="title"></h1>
+    </div>
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+      <div class="tabs" style="background-color: #ffff;border-color: #eaeaea;padding: 0 70px 1px;box-shadow: 0px 0px 2px 2px #f3f2f2;">
+        <a class="tab-item active" href="#" style="border: 0 solid #cb7730;color: #cb7730">
+        
+          <strong>体验设计</strong> 
+        </a>
+        <a class="tab-item" href="#" style="color: #333333;">
+          
+          设计法则
+        </a>
+        <a class="tab-item" href="#" style="color: #333333;">
+          
+          可用性
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--内容feed流-->
+  <div>
+    <div class="ArticleFeeds" style="margin-top: 7rem; margin-left: 0.1rem;">
+    
+        <!--Insgram-->
+        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
+                       <a href="posts/20171126.html">
+                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
+                             <img src="images/article/20171126/cover2.jpg">
+                          </div>
+                       </a>
+                       <div style="padding-top: 12px;">
+                         <p class="FristTitle" style="font-size:15px;"><strong>Ins快拍内容预期设计</strong></p>
+                         <p class="SecondTitle">体验设计</p>
+                       </div>
+        </div>
+
+        <!--Pinterest如何提升首页效率-->
+        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
+                       <a href="posts/20171014.html">
+                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
+                             <img src="images/article/20171014/cover.jpg">
+                          </div>
+                       </a>
+                       <div style="padding-top: 12px;">
+                         <p class="FristTitle" style="font-size:15px;"><strong>Pinterest如何提升首页效率</strong></p>
+                         <p class="SecondTitle">可用性 · 体验设计</p>
+                       </div>
+        </div>
+
+        <!--如何帮助用户做出更好的选择（2行标题）-->
+        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
+                       <a href="posts/20170521.html">
+                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
+                             <img src="images/article/20170521/cover.jpg">
+                          </div>
+                       </a>
+                       <div style="padding-top: 12px;">
+                         <p class="FristTitle" style="font-size:15px; "><strong>如何帮助用户做更聪明</strong></p>
+                         <p class="FristTitle" style="font-size:15px;"><strong>的选择</strong></p>
+                         <p class="SecondTitle">体验设计 · 可用性</p>
+                       </div>
+        </div>
+
+        <!--简述响应式设计-->
+        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
+                       <a href="posts/20170520.html">
+                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
+                             <img src="images/article/20170520/cover.jpg">
+                          </div>
+                       </a>
+                       <div style="padding-top: 12px;">
+                         <p class="FristTitle" style="font-size:15px; "><strong>简述响应式设计</strong></p>
+                         <p class="SecondTitle">可用性 · 体验设计</p>
+                       </div>
+        </div>
+
+
+    </div>
+  </div>
+
+
+
+
+          
+</body>
+</html>
