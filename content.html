@@ -49,14 +49,27 @@
     }
     .FristTitle{
       margin: 5px 0 5px;
+      width: 10rem;
     }
     .SecondTitle{
       padding-top: 5px;
+      width: 10rem;
     }
     .ArticleFeeds{
       flex-direction: row;
       flex-wrap: wrap;
       display: flex;
+      margin-top: 7rem;
+    }
+    .ArticleColumn1{
+      padding-bottom: 5px;
+      padding: 0 0.5rem 0 1rem;
+      width: 50vw;
+    }
+    .ArticleColumn2{
+      padding-bottom: 5px;
+      padding: 0 1rem 0 0.5rem;
+      width: 50vw;
     }
 
 
@@ -91,60 +104,60 @@
 
   <!--内容feed流-->
   <div>
-    <div class="ArticleFeeds" style="margin-top: 7rem; margin-left: 0.1rem;">
-    
-        <!--Insgram-->
-        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
-                       <a href="posts/20171126.html">
-                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
-                             <img src="images/article/20171126/cover2.jpg">
-                          </div>
-                       </a>
-                       <div style="padding-top: 12px;">
-                         <p class="FristTitle" style="font-size:15px;"><strong>Ins快拍内容预期设计</strong></p>
-                         <p class="SecondTitle">体验设计</p>
-                       </div>
-        </div>
+    <div class="ArticleFeeds">
 
-        <!--Pinterest如何提升首页效率-->
-        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
-                       <a href="posts/20171014.html">
-                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
-                             <img src="images/article/20171014/cover.jpg">
-                          </div>
-                       </a>
-                       <div style="padding-top: 12px;">
-                         <p class="FristTitle" style="font-size:15px;"><strong>Pinterest如何提升首页效率</strong></p>
-                         <p class="SecondTitle">可用性 · 体验设计</p>
-                       </div>
-        </div>
+                  <!--Insgram-->
+                  <div class="ArticleColumn1">
+                    <a href="posts/20171126.html">
+                      <div class="item item-image" style="border-radius: 4px;">
+                        <img src="images/article/20171126/cover2.jpg">
+                      </div>
+                    </a>
+                    <div style="padding-top: 12px;">
+                      <p class="FristTitle" style="font-size:15px;"><strong>Ins快拍内容预期设计</strong></p>
+                      <p class="SecondTitle">体验设计</p>
+                    </div>
+                  </div>
 
-        <!--如何帮助用户做出更好的选择（2行标题）-->
-        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
-                       <a href="posts/20170521.html">
-                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
-                             <img src="images/article/20170521/cover.jpg">
-                          </div>
-                       </a>
-                       <div style="padding-top: 12px;">
-                         <p class="FristTitle" style="font-size:15px; "><strong>如何帮助用户做更聪明</strong></p>
-                         <p class="FristTitle" style="font-size:15px;"><strong>的选择</strong></p>
-                         <p class="SecondTitle">体验设计 · 可用性</p>
-                       </div>
-        </div>
+                  <!--Pinterest首页效率提升-->
+                  <div class="ArticleColumn2">
+                    <a href="posts/20171014.html">
+                      <div class="item item-image" style="border-radius: 4px;">
+                        <img src="images/article/20171014/cover.jpg">
+                      </div>
+                    </a>
+                    <div style="padding-top: 12px;">
+                      <p class="FristTitle" style="font-size:15px;"><strong>Pinterest如何提升首页效率</strong></p>
+                      <p class="SecondTitle">可用性 · 体验设计</p>
+                    </div>
+                  </div>
 
-        <!--简述响应式设计-->
-        <div class="article" style="padding-bottom: 5px;padding-left: 0.5rem;">
-                       <a href="posts/20170520.html">
-                          <div class="item item-image" style="border-radius: 4px;width: 11rem;">
-                             <img src="images/article/20170520/cover.jpg">
-                          </div>
-                       </a>
-                       <div style="padding-top: 12px;">
-                         <p class="FristTitle" style="font-size:15px; "><strong>简述响应式设计</strong></p>
-                         <p class="SecondTitle">可用性 · 体验设计</p>
-                       </div>
-        </div>
+
+                  <!--如何帮助用户做出最聪明的选择-->
+                  <div class="ArticleColumn1">
+                    <a href="posts/20170521.html">
+                      <div class="item item-image" style="border-radius: 4px;">
+                        <img src="images/article/20170521/cover.jpg">
+                      </div>
+                    </a>
+                    <div style="padding-top: 12px;">
+                      <p class="FristTitle" style="font-size:15px;"><strong>如何帮助用户做出最聪明的选择</strong></p>
+                      <p class="SecondTitle">体验设计 · 可用性</p>
+                    </div>
+                  </div>
+
+                  <!--响应式Web设计-->
+                  <div class="ArticleColumn2">
+                    <a href="posts/20170520.html">
+                      <div class="item item-image" style="border-radius: 4px;">
+                        <img src="images/article/20170520/cover.jpg">
+                      </div>
+                    </a>
+                    <div style="padding-top: 12px;">
+                      <p class="FristTitle" style="font-size:15px;"><strong>响应式Web设计</strong></p>
+                      <p class="SecondTitle">可用性 · 体验设计</p>
+                    </div>
+                  </div>                       
 
 
     </div>
